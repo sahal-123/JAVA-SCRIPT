@@ -12,7 +12,7 @@
 
 <body style="color: rgb(8, 0, 255);">
     <h2>post from jsonplaceholder</h2>
-    <ul id="users"></ul> 
+    <ul id="users"></ul>
     <script>
         // fetching data(user) from jasonplaceholder
         fetch("https://jsonplaceholder.typicode.com/users")
@@ -21,14 +21,14 @@
                 const userList = document.getElementById("users");
 
                 // loop through first 5 post and display
-                data.slice(0,5).forEach(usr => {
+                data.slice(0, 5).forEach(usr => {
                     const li = document.createElement("li");
                     li.textContent = `#${usr.id} :${usr.username}  `;
                     userList.appendChild(li)
                 })
             })
             .catch(error => console.error("error fetching data:", error));
-            
+
 
 
 

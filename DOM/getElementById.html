@@ -1,0 +1,24 @@
+<!-- get ElementbyId is ajs methode used to select in html element by id attribute -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mainHeading"> welcome!</h1>
+    <button onclick="changeHeading()">change Heading</button>
+
+    <script>
+        function changeHeading(){
+        //use getelEmentByid to access the heading
+            const Heading = document.getElementById("mainHeading");
+            // change the text content of the heading
+            Heading.textContent = "Hello , you click the button!"
+        }
+    </script>
+</body>
+</html>
