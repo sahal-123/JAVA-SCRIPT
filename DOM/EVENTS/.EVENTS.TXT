@@ -1,4 +1,4 @@
-1. what is an event? = a event is an actipon or occurence that happens in the browser
+1. what is an event? = a event is an action or occurence that happens in the browser
 EX : a user cliking button,mouse hover ,form submit
 
 2. what is event listener?

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- when a key is pressed down . works for all keys. triggerd ones but repeats if you hold the key -->
+<h2>key press</h2>
+<p id="outpt"></p>
+
+<script>
+    document.addEventListener("keypress",(addEventListener) =>{
+    document.getElementById("outpt").innerText = `keypress: ${event.key}`;
+    })
+</script>
+
+</body>
+</html>
