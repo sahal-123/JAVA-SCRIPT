@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact with Map</title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .map,
+        .form-container {
+            flex: 1 1 50%;
+            min-width: 300px;
+            height: 90vh;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            min-height: 400px;
+        }
+
+        .form-container {
+            padding: 2rem;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 2px solid #e1e1e1;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+        .phone{
+            margin-top: 1rem;
+            text-align: left;
+            font-size: 16px;
+        }
+        .phone a{
+            color: rgb(252, 73, 91);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+
+        /* ========== Responsive adjustments ========== */
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .map,
+            .form-container {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+
+            .map iframe {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250437.12330073788!2d75.64600202232852!3d11.255521471966299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563d4747%3A0x32150641ca32ecab!2sKozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1759465600512!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div class="form-container">
+            <h2>Contact form</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your name" required />
+                <input type="email" name="email" placeholder="Your email" required />
+                <input type="text" name="title" placeholder="Subject" required />
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send message</button>
+            </form>
+
+            <div class="phone">
+                <a  href="https://wa.me/+917736836724">Whatsapp</a><br><br>
+                <a href= "tel:+919188373097"><i class="fa-solid fa-phone"></i>Phone</a><br><br>
+                <a href="mailto:binosha98@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("7XlLig_SooMh5PNml"); // public key
+        })();
+
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                emailjs
+                    .sendForm("service_orgpkoe", "template_6enadxt", this)
+                    .then(
+                        function () {
+                            alert("Message sent successfully");
+                        },
+                        function (error) {
+                            alert("Failed to send message: " + JSON.stringify(error));
+                        }
+                    );
+            });
+    </script>
+</body>
+
+</html>

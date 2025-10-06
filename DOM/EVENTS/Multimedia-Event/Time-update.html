@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="audioTimeUpdate" controls>
+        <source src="./𝙃𝙄𝙈𝙄𝙏𝙎𝙐 𝘿𝘼 𝙔𝙊 𝙁𝙐𝙉𝙆 - 𝙏𝙪𝙯𝙚𝙧𝙖 (𝙨𝙡𝙤𝙬𝙚𝙙 𝙩𝙤 𝙥𝙚𝙧𝙛𝙚𝙘𝙩𝙞𝙤𝙣)  𝙩𝙞𝙠𝙩𝙤𝙠.mp3">
+
+    </audio>
+    <p id="timOtot"> current time</p>
+
+    <script>
+        const audioTimeUpdate = document.getElementById("audioTimeUpdate")
+        const timOtot = document.getElementById("timOtot");
+
+        audioTimeUpdate.addEventListener("timeupdate",()=>{
+            timOtot.textContent = "current time:" + audioTimeUpdate.currentTime.toFixed(2);        })
+    </script>
+</body>
+</html>

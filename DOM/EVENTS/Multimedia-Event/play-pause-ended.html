@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Play Pause Ended</h2>
+    <audio></audio>
+    <audio id="audioPlayer" controls>
+        <source
+            src="./𝙃𝙄𝙈𝙄𝙏𝙎𝙐 𝘿𝘼 𝙔𝙊 𝙁𝙐𝙉𝙆 - 𝙏𝙪𝙯𝙚𝙧𝙖 (𝙨𝙡𝙤𝙬𝙚𝙙 𝙩𝙤 𝙥𝙚𝙧𝙛𝙚𝙘𝙩𝙞𝙤𝙣)  𝙩𝙞𝙠𝙩𝙤𝙠.mp3">
+    </audio>
+    <p id="msg">event will appear here</p>
+
+    <script>
+        const audio = document.getElementById("audioPlayer")
+        const output = document.getElementById("msg")
+
+        // play event
+        audio.addEventListener("play", () => {
+            output.textContent = "play event fired!!";
+            console.log("play event fired!!");
+
+        })
+
+        // puase event
+        audio.addEventListener("pause", () => {
+            output.textContent = "pause event fired!!";
+            console.log("pause event fired!!");
+        })
+
+        // end event
+        audio.addEventListener("ended", () => {
+            output.textContent = "end event fired!!";
+            console.log("end event fired!!");
+
+        })
+    </script>
+
+
+</body>
+
+</html>
